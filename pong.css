@@ -59,3 +59,19 @@ body {
     /* Set the border-radius to 50% to round the ball */
     border-radius: 50%;
 }
+
+/* Styles for the score panel */
+.score-board {
+    display: flex;
+    /* The player and computer score will be on either ends of the screen */
+    justify-content: space-between;
+    /* Give 2 percent of width padding on each side */
+    padding: 0 2vw 0 2vw;
+    font-weight: bold;
+    font-size: 10vh;
+    /* Set the color of the score-board to variable foreground */
+    color: var(--foreground-color);
+    /* Make the opacity 50 percent */
+    opacity: .5;
+}
+
