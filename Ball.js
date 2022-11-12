@@ -1,5 +1,7 @@
 //const initial velocity 
 const INITIAL_VELOCITY = 0.025;
+//const velocity increase
+const VELOCITY_INCREASE = 0.00001;
 
 export default class Ball {
     constructor(ballElem) {
@@ -21,6 +23,10 @@ export default class Ball {
     }
     set y(value) {
         this.ballElem.style.setProperty("--y", value);
+    }
+
+    rect() {
+        return this.ballElem.getBoundingClientRect();
     }
 
     //Reset function
@@ -45,6 +51,18 @@ export default class Ball {
     update(delta) {
         this.x += this.direction.x * this.velocity * delta;
         this.y += this.direction.y * this.velocity * delta;
+
+        //Increase the velocity of the ball as game progresses
+        this.velocity += VELOCITY_INCREASE * delta;
+        const rect = this.rect();
+
+        if (rect.bottom > window.innerHeight || rect.top <= 0) {
+            this.direction.y *= -1;
+        }
+
+        if (rect.right > window.innerWidth || rect.left <= 0) {
+            this.direction.y *= -1;
+        }
     }
 }
 

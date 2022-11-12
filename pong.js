@@ -18,7 +18,7 @@ function update(time) {
 
         //Only updating code if lastTime is not null
         //Passing delta into update function in ball class
-        ball.update(delta);
+        // ball.update(delta);
 
     }
 
