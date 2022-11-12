@@ -2,7 +2,41 @@
     box-sizing: border-box;
 }
 
+/* Root element will contain css variables that go across entire file */
+/* hue and saturation can be adjusted to change the paddle and background color */
+:root {
+    --hue: 200;
+    --saturation: 50%;
+    --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+    --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
 body {
     margin: 0;
-    background-color: aliceblue;
+    background-color: var(--background-color);
+}
+
+
+
+.paddle {
+    --position: 50;
+
+   position: absolute;
+   background-color: var(--foreground-color);
+   /* Use translate and top to set the paddles in the middle of the screen */
+   /* Using the position variable so that position of the paddle board can be changed */
+   top: calc(var(--position) * 1vh);
+   transform: translateY(-50%);
+   /* Width 1 percent of screen height and width will 10 percent of screen height */
+   width: 1vh;
+   height: 10vh;
+
+}
+
+.paddle.left {
+    left: 1vw;
+}
+
+.paddle.right {
+    right: 1vw;
 }
