@@ -27,7 +27,7 @@ body {
    /* Using the position variable so that position of the paddle board can be changed */
    top: calc(var(--position) * 1vh);
    transform: translateY(-50%);
-   /* Width 1 percent of screen height and width will 10 percent of screen height */
+   /* Width 1 percent of screen height and height is 10 percent of screen height */
    width: 1vh;
    height: 10vh;
 
@@ -39,4 +39,23 @@ body {
 
 .paddle.right {
     right: 1vw;
+}
+
+/* Styling for ball will be similiar to paddle */
+.ball {
+
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    background-color: var(--foreground-color);
+ 
+    left: calc(var(--x)*1vw);
+    top: calc(var(--y) *1vh);
+    transform: translate(-50%, -50%);
+    /* Width 2.5 percent of screen height and height will 2.5 percent of screen height */
+    width: 2.5vh;
+    height: 2.5vh;
+    /* Set the border-radius to 50% to round the ball */
+    border-radius: 50%;
 }
