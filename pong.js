@@ -31,7 +31,8 @@ function update(time) {
 
         //Only updating code if lastTime is not null
         //Passing delta into update function in ball class
-        ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
+        
+        // ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
 
         //Using the update function for the computer paddle
         computerPaddle.update(delta, ball.y)
