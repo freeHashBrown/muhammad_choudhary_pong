@@ -1,3 +1,5 @@
+//Main script for the game of pong
+
 //importing the Ball class
 import Ball from "./Ball.js";
 
@@ -69,7 +71,7 @@ function handleLose() {
         //Check if the player has won
         if (parseInt(playerScoreElement.textContent) > 19) {
             //Display message of player winning
-            message.textContent = "Player Wins";
+            message.textContent = "User Wins";
     
             //Reset all scores
             playerScoreElement.textContent = 0;
@@ -77,7 +79,7 @@ function handleLose() {
         }
         else {
             //Display message of player scoring
-            message.textContent = "Player Scored";
+            message.textContent = "User got a point";
         }
     } else {
         computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
@@ -86,7 +88,7 @@ function handleLose() {
         if (parseInt(computerScoreElement.textContent) > 19) {
 
             //Display message of player winning
-            message.textContent = "Computer Won";
+            message.textContent = "AI Wins";
 
            //Reset all scores
            playerScoreElement.textContent = 0;
@@ -94,7 +96,7 @@ function handleLose() {
     }
     else {
         //Display message of computer scoring
-        message.textContent = "AI Scored";
+        message.textContent = "AI got a point";
         } 
     }
 

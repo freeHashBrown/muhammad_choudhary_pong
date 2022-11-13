@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Muhammad Choudhary">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pong.css">
     <script defer src="./pong.js" type="module"></script>
     <title>Muhammad Choudhary Pong</title>
 </head>
 <body>
+    <!-- Section for the score board -->
     <section class="score-board">
+        <!-- Player section for the score board -->
         <div id="player-score">
             0
         </div>
+        <!-- Message section of the score board -->
         <div id="message" class="message">
             Begin
         </div>
+        <!-- AI section of the score board -->
         <div id="computer-score">
             0
         </div>
     </section>
+    <!-- div for ball -->
     <div class="ball" id="ball"></div>
+    <!-- div for user paddle -->
     <div class="paddle left" id="player-paddle"></div>
+    <!-- div for AI paddle -->
     <div class="paddle right" id="computer-paddle"></div>
 </body>
 </html>

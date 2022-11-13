@@ -1,6 +1,7 @@
 //Speed of the computer paddle
 const SPEED = 0.02
 
+//Class for paddle 
 export default class Paddle {
     constructor(paddleElem) {
         this.paddleElem = paddleElem
