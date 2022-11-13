@@ -60,6 +60,11 @@ body {
     border-radius: 50%;
 }
 
+.message {
+    font-size: 5vw;
+    padding-top: 3vw;
+}
+
 /* Styles for the score panel */
 .score-board {
     display: flex;

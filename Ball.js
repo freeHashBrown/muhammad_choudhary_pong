@@ -70,6 +70,8 @@ function randomNumberBetween(min, max) {
     return Math.random() * (max - min) + min
 }
 
+//Function allows the ball to be collided by the paddles
+
 function isCollision(rect1, rect2) {
     return (rect1.left <= rect2.right && 
         rect1.right >= rect2.left && 

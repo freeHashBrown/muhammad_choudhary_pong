@@ -11,10 +11,12 @@ const ball = new Ball(document.getElementById("ball"));
 const playerPaddle = new Paddle(document.getElementById("player-paddle"));
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"));
 
+//Get player and computer score
 const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
 
-
+//Get message element
+const message = document.getElementById("message");
 
 
 //Create a variable called lastTime, by default it will be null
@@ -31,8 +33,8 @@ function update(time) {
 
         //Only updating code if lastTime is not null
         //Passing delta into update function in ball class
-        
-        // ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
+
+        ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
 
         //Using the update function for the computer paddle
         computerPaddle.update(delta, ball.y)
@@ -59,10 +61,41 @@ function isLose() {
 function handleLose() {
 
     const rect = ball.rect();
+    //Check if the AI or player has missed the ball
     if (rect.right >= window.innerWidth) {
+
         playerScoreElement.textContent = parseInt(playerScoreElement.textContent) + 1;
+
+        //Check if the player has won
+        if (parseInt(playerScoreElement.textContent) > 19) {
+            //Display message of player winning
+            message.textContent = "Player Wins";
+    
+            //Reset all scores
+            playerScoreElement.textContent = 0;
+            computerScoreElement.textContent = 0;
+        }
+        else {
+            //Display message of player scoring
+            message.textContent = "Player Scored";
+        }
     } else {
         computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
+
+        //Check if AI has won
+        if (parseInt(computerScoreElement.textContent) > 19) {
+
+            //Display message of player winning
+            message.textContent = "Computer Won";
+
+           //Reset all scores
+           playerScoreElement.textContent = 0;
+           computerScoreElement.textContent = 0;        
+    }
+    else {
+        //Display message of computer scoring
+        message.textContent = "AI Scored";
+        } 
     }
 
 
